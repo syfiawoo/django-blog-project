@@ -1,0 +1,21 @@
+<html>
+<head>
+
+<meta http-equiv="Content-type" content="text/html;
+charset=utf-8" />
+<title>Blog Posts</title>
+</head>
+<body>
+<div id="content">
+{% if post_list %}
+<ol>
+{% for post in post_list %}
+<li>{{ post.title }}</li>
+{% endfor %}
+</ol>
+{% else %}
+You don't have any posts
+{% endif %}
+</div>
+</body>
+</html>

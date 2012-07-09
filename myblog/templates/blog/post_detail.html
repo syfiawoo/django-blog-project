@@ -1,0 +1,22 @@
+<html>
+<head>
+
+<meta http-equiv="Content-type" content="text/html;
+charset=utf-8" />
+<title>Blog Posts</title>
+</head>
+<body>
+<div id="content">
+	<h2>{{post.title }}</h2>
+<p>{{ post.body }}</p>
+{% if comments %}
+<table>
+	<tr><th>Author</th><th>Comments</th></tr>
+{% for com in comments %}
+<tr><td>{{com.author}} </td><td>{{com.body}}</td></tr>
+{% endfor %}
+</table>
+{% endif %}
+</div>
+</body>
+</html>

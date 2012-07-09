@@ -27,7 +27,8 @@ def post_detail(request, id, showComments=False):
         return HttpResponse(t.render(c))
     
 def post_search(request, term):
-    return Post.objects.filter(body__contains=term)
+    post=Post.objects.filter(body__contains=term)
+    return HttpResponse(post)
 
 def home(request):
     print 'it works'

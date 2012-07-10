@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Seth's Blog</h1>
+{% if post_list %}
+
+{% for post in post_list %}
+<h2><a href="/blog/posts/{{ post.id }}/true">
+{{ post.title }}
+</a></h2>
+<ul> 
+<li> Created: {{post.created}} </li>
+<li> Last Modified: {{post.updated}}</li>
+<li> Content: {{post.body|slice:':60'}}</li>
+</ul>
+{% endfor %}
+
+{% else %}
+You don't have any posts
+{% endif %}
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3> You searched for '{{search}}'</h3>
+{% if post_list %}
+<p>The following posts contain <b>'{{search}}'</b></p>
+{% for post in post_list %}
+<ul> 
+<li> <a href="/blog/posts/{{ post.id }}/true">
+{{ post.title }}
+</a> </li>
+</ul>
+{% endfor %}
+
+{% else %}
+There are no posts matching the search query
+{% endif %}
+{% endblock %}
+
+

@@ -1,14 +1,9 @@
-<html>
-<head>
-
-<meta http-equiv="Content-type" content="text/html;
-charset=utf-8" />
-<title>Blog Posts</title>
-</head>
-<body>
-<div id="content">
-	<h2>{{post.title }}</h2>
-<p>{{ post.body }}</p>
+{% extends 'base.html' %}
+{% block content %}
+	<h2><b>Post:</b> {{post.title }}</h2>
+<p><b>Content:</b> {{ post.body }}</p>
+<p><b>Created:</b> {{ post.created }}</p>
+<p><b>Last Updated:</b> {{ post.updated }}</p>
 {% if comments %}
 <table>
 	<tr><th>Author</th><th>Comments</th></tr>
@@ -17,6 +12,5 @@ charset=utf-8" />
 {% endfor %}
 </table>
 {% endif %}
-</div>
-</body>
-</html>
+{% endblock %}
+

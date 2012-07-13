@@ -20,12 +20,12 @@ def post_list(request):
 class CommentForm(ModelForm):
     class Meta:
         model= Comment
-        exclude=['post']
+        exclude=['post','author']
 
-    def some_body(self):
+    '''def some_body(self):
         return self.body[:60]
     def __unicode__(self):
-        return self.body
+        return self.body'''
 
 
 @csrf_exempt
@@ -33,6 +33,7 @@ def post_detail(request, id, showComments=False):
     post=Post.objects.get(pk=id)
     if request.method == 'POST':
         comment = Comment(post=post)
+        comment.author=
         form = CommentForm(request.POST,instance=comment)
         if form.is_valid():
             form.save()

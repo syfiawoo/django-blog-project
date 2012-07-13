@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 #from django.contrib import admin
 
@@ -9,6 +10,14 @@ class Post(models.Model):
     updated=models.DateField(auto_now=True)
     def __unicode__(self):
         return self.title
+    #@models.permalink
+    def get_absolute_url(self):
+        return '/blog/posts/%i/true' % self.id
+
+    '''@models.permalink
+    def get_absolute_url(self):
+        return ('post_detail',(),{'id':self.id,'showComments':'true/'})'''
+
 
 class Comment(models.Model):
     
@@ -21,6 +30,10 @@ class Comment(models.Model):
         return self.body[:60]
     def __unicode__(self):
         return self.body
+
+
+
+
 
 '''
 class AuthorAdmin(admin.ModelAdmin):

@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Seth's Blog</h1>
 {% if post_list %}
 
+
 {% for post in post_list %}
+    <div class="row-fluid">
+    <div class="span12">
 <h2><a href="/blog/posts/{{ post.id }}/true">
 {{ post.title }}
 </a></h2>
@@ -12,7 +14,11 @@
 <li> Last Modified: {{post.updated}}</li>
 <li> Content: {{post.body|slice:':60'}}</li>
 </ul>
+        <p><a class="btn" href="/blog/posts/{{ post.id }}/true">View details &raquo;</a></p>
+    </div><!--/span-->
+    </div>
 {% endfor %}
+
 
 {% else %}
 You don't have any posts

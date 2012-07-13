@@ -5,12 +5,25 @@
 <p><b>Created:</b> {{ post.created }}</p>
 <p><b>Last Updated:</b> {{ post.updated }}</p>
 {% if comments %}
-<table>
-	<tr><th>Author</th><th>Comments</th></tr>
+<table class="table table-striped table-bordered table-condensed">
+	<tr><th>Author</th><th colspan="2">Comments</th></tr>
 {% for com in comments %}
-<tr><td>{{com.author}} </td><td>{{com.body}}</td></tr>
+<tr><td>{{com.author}} </td><td>{{com.body}}</td><td>
+
+    <a href="/blog/comments/{{ com.id }}/edit">
+        Edit Comment
+    </a>
+</td></tr>
 {% endfor %}
 </table>
 {% endif %}
+    <h3>New comment:</h3>
+    <div>
+        <form class="well" method='post' action="">
+            {{ form.as_p }}
+            <input type='submit' name='Submit'>
+        </form>
+    </div>
+
 {% endblock %}
 

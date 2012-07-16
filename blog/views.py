@@ -1,4 +1,5 @@
 # Create your views here.
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 from django.template import Context, loader
 from django.http import HttpResponse
@@ -13,7 +14,7 @@ def post_list(request):
     post_list = Post.objects.all()
     
     t=loader.get_template('blog/post_list.html')
-    c=Context({'post_list':post_list,})
+    c=Context({'post_list':post_list,'user':request})
     #return HttpResponse(post_list)
     return HttpResponse(t.render(c))
 
@@ -27,13 +28,17 @@ class CommentForm(ModelForm):
     def __unicode__(self):
         return self.body'''
 
+def see_post_details(user):
+    return user.is_authenticated()
 
 @csrf_exempt
+@user_passes_test(see_post_details,login_url='/reg/sorry/')
+#@login_required
 def post_detail(request, id, showComments=False):
     post=Post.objects.get(pk=id)
     if request.method == 'POST':
         comment = Comment(post=post)
-        comment.author=
+        comment.author=request.session['username']
         form = CommentForm(request.POST,instance=comment)
         if form.is_valid():
             form.save()
@@ -48,18 +53,18 @@ def post_detail(request, id, showComments=False):
         c=Context({'post':post,})
         return HttpResponse(t.render(c))
     else:
-        c=Context({'post':post,'comments':me,'form' : form})
+        c=Context({'post':post,'comments':me,'form' : form, 'user':request})
         return HttpResponse(t.render(c))
     
 def post_search(request, term):
     post=Post.objects.filter(body__contains=term)
     t=loader.get_template('blog/post_search.html')
-    c=Context({'post_list':post,'search':term})
+    c=Context({'post_list':post,'search':term,'user':request})
     return HttpResponse(t.render(c))
 
 def home(request):
     t=loader.get_template('base.html')
-    c=Context({})
+    c=Context({'user':request})
     return HttpResponse(t.render(c))
 
 @csrf_exempt
@@ -73,8 +78,8 @@ def edit_comment(request,id):
             form.save()
         return HttpResponseRedirect(post_com.get_absolute_url())
     else:
-        form = CommentForm(initial={'body':comment.body,'author':comment.author})
-        form.fields['author'].widget.attrs['readonly'] = True
+        form = CommentForm(initial={'body':comment.body})
+        #form.fields['author'].widget.attrs['readonly'] = True
 
-    return render_to_response('blog/edit_comment.html',locals())
+    return render_to_response('blog/edit_comment.html',{'user':request,'form':form})
 

@@ -110,6 +110,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'myblog.urls'
 
+LOGIN_URL = '/reg/login/'
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'myblog.wsgi.application'
 

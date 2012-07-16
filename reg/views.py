@@ -24,6 +24,7 @@ def do_login(request):
         user=authenticate(username=uname,password=passw)
         if user is not None:
             if user.is_active:
+                request.session['username']=uname
                 login(request,user)
             else:
                 pass
@@ -39,3 +40,7 @@ def do_login(request):
 def do_logout(request):
     logout(request)
     return render_to_response('reg/logout.html')
+
+
+def sorry(request):
+    return render_to_response('reg/sorry.html')

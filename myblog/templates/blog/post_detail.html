@@ -9,14 +9,18 @@
 	<tr><th>Author</th><th colspan="2">Comments</th></tr>
 {% for com in comments %}
 <tr><td>{{com.author}} </td><td>{{com.body}}</td><td>
-
+{% if user.session.username == com.author %}
     <a href="/blog/comments/{{ com.id }}/edit">
         Edit Comment
     </a>
+    {% else %}
+    Edit Comment
+    {% endif %}
 </td></tr>
 {% endfor %}
 </table>
 {% endif %}
+    {% if user.session.username %}
     <h3>New comment:</h3>
     <div>
         <form class="well" method='post' action="">
@@ -24,6 +28,6 @@
             <input type='submit' name='Submit'>
         </form>
     </div>
-
+    {% endif %}
 {% endblock %}
 

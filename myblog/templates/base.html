@@ -40,16 +40,11 @@ charset=utf-8" />
                     <i class="icon-user"></i>
                     {% if user.session.username %}
                     Welcome, {{ user.session.username }}
-                        <div class="btn-group pull-right"></div>
+                        <a class="btn btn-primary" href="/reg/logout/">logout</a>
                     {% else %}
-                    anonymous
+                    anonymous <a class="btn btn-success" href="/reg/login/">login</a>
                     {% endif %}
                 </p>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Profile</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Sign Out</a></li>
-                </ul>
             </div>
             <div class="nav-collapse">
                 <ul class="nav">

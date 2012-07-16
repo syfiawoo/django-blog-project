@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e19c42ac-113f-43b9-8505-f4cde7a2dfd2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myblog/assets/technology.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myblog/templates/reg/sorry.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/myblog/templates/blog/all_posts.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/myblog/templates/blog/back.png" afterPath="$PROJECT_DIR$/myblog/assets/back.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/views.py" afterPath="$PROJECT_DIR$/blog/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/settings.py" afterPath="$PROJECT_DIR$/myblog/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/templates/base.html" afterPath="$PROJECT_DIR$/myblog/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/templates/blog/post_detail.html" afterPath="$PROJECT_DIR$/myblog/templates/blog/post_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/templates/blog/post_list.html" afterPath="$PROJECT_DIR$/myblog/templates/blog/post_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/templates/reg/login.html" afterPath="$PROJECT_DIR$/myblog/templates/reg/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reg/urls.py" afterPath="$PROJECT_DIR$/reg/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reg/views.py" afterPath="$PROJECT_DIR$/reg/views.py" />
     </list>
     <ignored path="django-blog-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="45" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.61340207">
+            <state line="44" column="74" selection-start="1760" selection-end="1760" vertical-scroll-proportion="-9.916667">
               <folding />
             </state>
           </provider>
@@ -74,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_list.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="post_list.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myblog/templates/blog/post_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="21" selection-start="145" selection-end="145" vertical-scroll-proportion="-5.0">
+            <state line="7" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.26992288">
               <folding />
             </state>
           </provider>
@@ -168,9 +157,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1368" />
-    <option name="height" value="773" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -574,20 +563,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="24" width="1368" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.49720225" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.52198243" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.49720225" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19642857" sideWeight="0.49080735" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20613287" sideWeight="0.48176292" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26899695" sideWeight="0.77597404" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26899695" sideWeight="0.7938671" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22402598" sideWeight="0.17553191" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22402598" sideWeight="0.81914896" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20613287" sideWeight="0.51291794" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22402598" sideWeight="0.81914896" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.48176292" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -732,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myblog/templates/blog/post_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="145" selection-end="145" vertical-scroll-proportion="-5.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="82" selection-start="2657" selection-end="2657" vertical-scroll-proportion="-11.2">
@@ -750,7 +732,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myblog/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="45" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.61340207">
+        <state line="44" column="74" selection-start="1760" selection-end="1760" vertical-scroll-proportion="-9.916667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myblog/templates/blog/post_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.26992288">
           <folding />
         </state>
       </provider>

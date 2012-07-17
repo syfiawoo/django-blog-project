@@ -1,9 +1,11 @@
 # Create your views here.
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.forms.forms import Form
 
 from django.template import Context, loader
 from django.http import HttpResponse
 from django.forms import ModelForm
+from django import forms
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
 from models import Post, Comment
@@ -23,10 +25,8 @@ class CommentForm(ModelForm):
         model= Comment
         exclude=['post','author']
 
-    '''def some_body(self):
-        return self.body[:60]
-    def __unicode__(self):
-        return self.body'''
+class SearchForm(Form):
+    search=forms.CharField()
 
 def see_post_details(user):
     return user.is_authenticated()
@@ -55,11 +55,19 @@ def post_detail(request, id, showComments=False):
     else:
         c=Context({'post':post,'comments':me,'form' : form, 'user':request})
         return HttpResponse(t.render(c))
-    
-def post_search(request, term):
-    post=Post.objects.filter(body__contains=term)
+
+@csrf_exempt
+def post_search(request):
+    if request.method == 'POST':
+        term = request.POST['search']
+        post=Post.objects.filter(body__contains=term)
+        form=SearchForm(request.POST)
+    else:
+        form=SearchForm()
+        post=''
+        term= False
     t=loader.get_template('blog/post_search.html')
-    c=Context({'post_list':post,'search':term,'user':request})
+    c=Context({'post_list':post,'search':term,'user':request,'form':form})
     return HttpResponse(t.render(c))
 
 def home(request):
@@ -68,6 +76,7 @@ def home(request):
     return HttpResponse(t.render(c))
 
 @csrf_exempt
+@login_required
 def edit_comment(request,id):
     comment=Comment.objects.get(pk=id)
     post_com=Post.objects.get(pk=comment.post_id)

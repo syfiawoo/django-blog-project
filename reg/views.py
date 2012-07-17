@@ -27,12 +27,14 @@ def do_login(request):
                 request.session['username']=uname
                 login(request,user)
             else:
-                pass
+                #return HttpResponse('Your account has been disabled')
+                return render_to_response('reg/login.html',{'account':'disabled'})
         else:
-            pass
+            #return HttpResponseForbidden('You have not registered for this blog, to do so, contact the site admin')
+            return render_to_response('reg/login.html',{'account':'none'})
     form = LoginForm()
     return render_to_response('reg/login.html', {
-        'form': form,
+        'form': form,'user':request,
         'logged_in': request.user.is_authenticated()
     })
 

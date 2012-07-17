@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div>
+        <form class="well" method='post' action="">
+            {{ form.as_p }}
+            <input type='submit' value='Search'>
+        </form>
+    </div>
+    {% if not search %}
+    <p></p>
+    {% else %}
 <h3> You searched for '{{search}}'</h3>
 {% if post_list %}
 <p>The following posts contain <b>'{{search}}'</b></p>
@@ -14,6 +23,7 @@
 {% else %}
 There are no posts matching the search query
 {% endif %}
+    {% endif %}
 {% endblock %}
 
 

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    {{ logged_in }}
+
     {% if logged_in %}
-        <h3>You are already logged in!!!</h3>
-        <div><a href="/reg/logout">Logout</a></div>
+        <h3>You are logged in!!!</h3>
+        <h4>Click <a href="/blog/posts/">here</a> to view all posts or
+        <a href="/reg/logout">logout</a> to logout</h4>
+    {% elif account == 'disabled' %}
+        <h4>Your account has been disabled</h4>
+    {% elif account == 'none' %}
+        <h4>You have not registered for this blog, to do so, contact the site admin! </h4>
     {% else %}
     <form action="." method="post">
         {{ form.as_p }}
@@ -11,4 +16,5 @@
 
     </form>
     {% endif %}
+
 {% endblock %}

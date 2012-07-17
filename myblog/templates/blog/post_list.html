@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if post_list %}
-    <div class="row-fluid">
+
 {% for post in post_list %}
 
 
-
+    <div class="row-fluid">
     <div class="span6">
 <h2><a href="/blog/posts/{{ post.id }}/true">
 {{ post.title }}
@@ -17,11 +17,12 @@
 </ul>
         <p><a class="btn" href="/blog/posts/{{ post.id }}/true">View details &raquo;</a></p>
     </div><!--/span-->
-
+    </div>
+    <hr>
     {% if forloop.counter|divisibleby:3 %}
     {% endif %}
 {% endfor %}
-    </div>
+
 
 {% else %}
 You don't have any posts
